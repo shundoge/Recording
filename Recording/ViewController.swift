@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , AVAudioRecorderDelegate{
     var audioRecorder: AVAudioRecorder?
     // 録音用URLを設定
     var dirURL :NSURL?
@@ -55,10 +55,15 @@ class ViewController: UIViewController {
                               AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))]
         do {
             audioRecorder = try AVAudioRecorder(URL: recordingsURL!, settings: recordSettings)
+            audioRecorder!.delegate = self
+            audioRecorder!.prepareToRecord()
+            audioRecorder!.recordForDuration(5.0)
         } catch {
             audioRecorder = nil
         }
         
+   
+    
     }
     
     /// DocumentsのURLを取得
@@ -86,6 +91,31 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func finishRecording(success success: Bool) {}
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            print("finished recording \(flag)")
+            //stopButton.enabled = false
+            //playButton.enabled = true
+            //recordButton.setTitle("Record", forState:.Normal)
+        
+            // ios8 and later
+            let alert = UIAlertController(title: "Recorder",
+                                      message: "Finished Recording",
+                                      preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Keep", style: .Default, handler: {action in
+                print("keep was tapped")
+            }))
+            alert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {action in
+                self.audioRecorder!.deleteRecording()
+            }))
+            self.presentViewController(alert, animated:true, completion:nil)
+        }
+    }
+    func audioRecorderEncodeErrorDidOccur(audioRecorder: AVAudioRecorder,
+                                          error: NSError?) {
+        print("\(error!.localizedDescription)")
+    }
 
 }
 
