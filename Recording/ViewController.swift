@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController , AVAudioRecorderDelegate{
+class ViewController: UIViewController, GIDSignInUIDelegate , AVAudioRecorderDelegate{
     var audioRecorder: AVAudioRecorder?
     // 録音用URLを設定
     var dirURL :NSURL?
@@ -82,6 +82,7 @@ class ViewController: UIViewController , AVAudioRecorderDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
         setupAudioRecorder()
         // Do any additional setup after loading the view, typically from a nib.
     }

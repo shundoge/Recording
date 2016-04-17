@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512467FF194D1F4CF62C694A /* libPods-Recording.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B582A6DB3F4745C436E3349 /* libPods-Recording.a */; };
+		CF117D261CC3481D00C18FE4 /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = CF117D251CC3481D00C18FE4 /* GoogleService-Info .plist */; };
 		CF167C5B1CC2629100151BBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF167C5A1CC2629100151BBD /* AppDelegate.swift */; };
 		CF167C5D1CC2629100151BBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF167C5C1CC2629100151BBD /* ViewController.swift */; };
 		CF167C601CC2629100151BBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF167C5E1CC2629100151BBD /* Main.storyboard */; };
@@ -15,6 +17,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060D19AE65624B4982B38ED2 /* Pods-Recording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recording.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recording/Pods-Recording.release.xcconfig"; sourceTree = "<group>"; };
+		090B0967ACEDACE5F2725CCC /* Pods-Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recording.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recording/Pods-Recording.debug.xcconfig"; sourceTree = "<group>"; };
+		0B582A6DB3F4745C436E3349 /* libPods-Recording.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Recording.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF117D251CC3481D00C18FE4 /* GoogleService-Info .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info .plist"; sourceTree = "<group>"; };
+		CF117D271CC34B7700C18FE4 /* Recording-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recording-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF167C571CC2629100151BBD /* Recording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recording.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF167C5A1CC2629100151BBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF167C5C1CC2629100151BBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +36,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				512467FF194D1F4CF62C694A /* libPods-Recording.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52E7657DDDF57462DAC9C8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				090B0967ACEDACE5F2725CCC /* Pods-Recording.debug.xcconfig */,
+				060D19AE65624B4982B38ED2 /* Pods-Recording.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF167C4E1CC2629100151BBD = {
 			isa = PBXGroup;
 			children = (
 				CF167C591CC2629100151BBD /* Recording */,
 				CF167C581CC2629100151BBD /* Products */,
+				A52E7657DDDF57462DAC9C8C /* Pods */,
+				DE8BAE12A6B05DB524FB2881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,9 +78,19 @@
 				CF167C5E1CC2629100151BBD /* Main.storyboard */,
 				CF167C611CC2629100151BBD /* Assets.xcassets */,
 				CF167C631CC2629100151BBD /* LaunchScreen.storyboard */,
+				CF117D251CC3481D00C18FE4 /* GoogleService-Info .plist */,
 				CF167C661CC2629100151BBD /* Info.plist */,
+				CF117D271CC34B7700C18FE4 /* Recording-Bridging-Header.h */,
 			);
 			path = Recording;
+			sourceTree = "<group>";
+		};
+		DE8BAE12A6B05DB524FB2881 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B582A6DB3F4745C436E3349 /* libPods-Recording.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF167C691CC2629100151BBD /* Build configuration list for PBXNativeTarget "Recording" */;
 			buildPhases = (
+				B3F55A95548FD1F82BBDA4B7 /* Check Pods Manifest.lock */,
 				CF167C531CC2629100151BBD /* Sources */,
 				CF167C541CC2629100151BBD /* Frameworks */,
 				CF167C551CC2629100151BBD /* Resources */,
+				527E0A0F406344934F8B56DB /* Embed Pods Frameworks */,
+				73108ECAF562BD23F759A02A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,11 +156,60 @@
 			files = (
 				CF167C651CC2629100151BBD /* LaunchScreen.storyboard in Resources */,
 				CF167C621CC2629100151BBD /* Assets.xcassets in Resources */,
+				CF117D261CC3481D00C18FE4 /* GoogleService-Info .plist in Resources */,
 				CF167C601CC2629100151BBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		527E0A0F406344934F8B56DB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recording/Pods-Recording-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73108ECAF562BD23F759A02A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recording/Pods-Recording-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F55A95548FD1F82BBDA4B7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF167C531CC2629100151BBD /* Sources */ = {
@@ -247,23 +328,30 @@
 		};
 		CF167C6A1CC2629100151BBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 090B0967ACEDACE5F2725CCC /* Pods-Recording.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Recording/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.shunichi.tanaka.Recording;
+				PRODUCT_BUNDLE_IDENTIFIER = "shunichi.tanaka.Listen-4U";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Recording/Recording-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CF167C6B1CC2629100151BBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 060D19AE65624B4982B38ED2 /* Pods-Recording.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Recording/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.shunichi.tanaka.Recording;
+				PRODUCT_BUNDLE_IDENTIFIER = "shunichi.tanaka.Listen-4U";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Recording/Recording-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -286,6 +374,7 @@
 				CF167C6B1CC2629100151BBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
